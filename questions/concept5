@@ -1,0 +1,43 @@
+----> Create an inheritance relationship between a parent and child class. 
+Invoke the parent constructor from the child class. 
+Create main.js to call parent class methods from a child class object.
+From the above code, explain how the super and these keywords help achieve the solution.
+
+
+-->"extends establishes inheritance between the Child and Parent classes. 
+super() is used inside the Child constructor to invoke the Parent constructor and initialize the inherited properties. this refers to the current object and is used to access or initialize its properties and methods. Because Child extends Parent, a Child object can directly access the methods defined in the Parent class."super() calls the constructor of the parent class.
+
+
+---> What is the difference between == and ===?
+| Operator | Name            | Checks type? | Example               |
+| -------- | --------------- | ------------ | --------------------- |
+| `==`     | Loose equality  | ❌ No         | `5 == "5"` → `true`   |
+| `===`    | Strict equality | ✅ Yes        | `5 === "5"` → `false` |
+
+console.log(5 == "5"); //true
+5 is a number and "5" is a string, but == converts the string to a number before comparing.
+
+console.log(5 === "5"); //false
+5    → number
+"5"  → string
+
+"== is the loose equality operator. It compares values after type conversion when necessary. === is the strict equality operator, which compares both value and data type without type conversion. In general, I prefer using === because it avoids unexpected type coercion."
+== → value
+=== → value + type
+
+
+---> What is the difference between null and undefined in JavaScript?
+|                 | `undefined`                     | `null`                                        |
+| --------------- | ------------------------------- | --------------------------------------------- |
+| Meaning         | Value has **not been assigned** | Intentionally set to **no value**             |
+| Usually happens | Automatically                   | Explicitly by the developer                   |
+| Type            | `"undefined"`                   | `"object"` *(historical JavaScript behavior)* |
+| Example         | `let x;`                        | `let x = null;`                               |
+
+A variable is undefined when it has been declared but no value has been assigned.
+let name;
+console.log(name);
+
+null means the developer intentionally says there is no value. (object)
+let name = null;
+console.log(name);

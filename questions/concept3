@@ -1,0 +1,61 @@
+--> Can a JavaScript object hold a function as a property? Explain with an example.
+
+ Yes. A JavaScript object can absolutely hold a function as a property. 
+ When a function is stored as an object property, it is commonly called a method.
+
+ let person = {
+    name: "Shaliza",
+    age: 25,
+    greet: function() {
+        console.log("Hello!");
+    }
+};
+
+person.greet();
+
+---> What are anonymous functions in JavaScript? Define their syntax and implementation.
+
+An anonymous function is a function without a name.
+It is usually assigned to a variable, passed as an argument to another function, or used as a callback.
+
+let greet = function() {
+    console.log("Hello");
+};
+
+greet();
+
+What is an object?
+A JavaScript object stores data as key-value pairs and can also contain functions/methods.
+let user = {
+    name: "John",
+    age: 30,
+    login: function() {
+        console.log("Login successful");
+    }
+};
+
+What is this?
+Here this refers to the object that is calling the method.
+let user = {
+    name: "John",
+
+    greet() {
+        console.log(this.name);
+    }
+};
+user.greet();
+
+What is inheritance?
+Child inherits the method from Parent.
+
+What are try, catch, and finally?
+try → code that might throw an error
+catch → handles the error
+finally → executes whether an error occurs or not
+try {
+    let result = riskyOperation();
+} catch (error) {
+    console.log(error);
+} finally {
+    console.log("Execution completed");
+}

@@ -1,0 +1,31 @@
+ A classic programming interview question that involves using array methods 
+ (filter, map, reduce), and JavaScript objects.
+
+ assume Given an array of employees, use JavaScript array methods to:
+
+ "filter() is used to select elements based on a condition and returns a new array. 
+ map() is used to transform each element and returns a new array. 
+ reduce() is used to accumulate the elements of an array into a single result, such as a sum or count."
+
+Find employees whose salary is greater than 50,000.
+Get only their names.
+Calculate their total salary.
+
+const employees = [
+    { name: "John", salary: 45000 },
+    { name: "Sara", salary: 60000 },
+    { name: "Mike", salary: 70000 },
+    { name: "Anna", salary: 40000 }
+];
+const filteredEmployees = employees.filter(employee => employee.salary > 50000);
+console.log(filteredEmployees);
+//filter() → gives you a subset of the array.
+const names = filteredEmployees.map(employee => employee.name);
+console.log(names);
+//map() → transforms every element and returns a new array.
+const totalSalary = filteredEmployees.reduce(
+    (total, employee) => total + employee.salary,
+    0
+);
+console.log(totalSalary);
+//reduce() → reduces an array to one final value.

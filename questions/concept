@@ -1,0 +1,37 @@
+Difference between var, let , const in JavaScript
+
+Feature	        var	             let	            const
+Scope	      Function Scope	Block Scope {}	    Block Scope {}
+Re-assignable?	Yes	            Yes	                 No
+Re-declarable?	Yes	            No	                 No
+
+var example
+function testVar() {
+    if (true) {
+        var name = "Rahul";
+    }
+    // 'var' leaks outside the if-block!
+    console.log(name); // Output: Rahul
+}
+testVar();
+
+Let example
+function testLet() {
+    if (true) {
+        let name = "Rahul";
+        console.log(name); // Output: Rahul
+    }
+    // Accessing it outside the if-block fails
+    console.log(name); // ReferenceError: name is not defined
+}
+testLet();
+
+const example
+function testConst() {
+    const role = "Tester";
+
+    // Reassigning const throws an error
+    role = "Developer"; // TypeError: Assignment to constant variable!
+}
+
+testConst();
